@@ -2,7 +2,10 @@
 let mapleader=" "
 
 call plug#begin('~/.vim/vim-plug')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rakr/vim-one'
+Plug 'gruvbox-community/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
@@ -18,7 +21,18 @@ Plug 'joshdick/onedark.vim'
 call plug#end()
 
 " scripts
-" lightline
+
+ "coc config
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ ]
+
+"lightline
 if !has('gui_running')
   set t_Co=256
 endif
@@ -26,7 +40,8 @@ endif
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }"set bg=dark
-"alt fix
+
+"alt fix (only add if Control+V followed by ALT-x shows ^[x (in terminal))
 for i in range(97,122)
   let c = nr2char(i)
   exec "map \e".c." <M-".c.">"
@@ -35,9 +50,12 @@ endfor
 
 
 " settings
+
+autocmd BufWritePre *.ts execute "silent %!npx prettier --stdin-filepath '" . expand('%:p') . "'"
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 syntax enable 
 "set background=dark
-colorscheme onedark 
+colorscheme gruvbox 
 let g:move_key_modifier = 'A'
 "hi Normal guibg=NONE ctermbg=NONE
 set hlsearch
@@ -82,3 +100,5 @@ nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
+map <A-l> :tabn<CR>
+map <a-h> :tabp<CR>
