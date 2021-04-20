@@ -1,8 +1,12 @@
-" vim-plug
 let mapleader=" "
+" vim-plug
 
 call plug#begin('~/.vim/vim-plug')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'kien/ctrlp.vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rakr/vim-one'
 Plug 'gruvbox-community/gruvbox'
@@ -92,13 +96,16 @@ nnoremap <silent> <c-k> <c-u>
 nnoremap <silent> <c-j> <c-d>  
 nnoremap <silent> <C-t> :tabnew<CR> 
 nnoremap <silent> <C-w> :quit<CR>
-map <S-insert> <C-i>
-map <c-a> <esc><esc>ggVG<CR>
-map <c-s> :w<CR>
+map <C-insert> <C-i>
+map <C-a> <esc><esc>ggVG<CR>
+map <C-s> :w<CR>
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 map <A-l> :tabn<CR>
-map <a-h> :tabp<CR>
+map <A-h> :tabp<CR>
+map <A-r> :NERDTreeToggle<CR>
+vmap f <plug>NERDCommenterToggle
+nmap f <plug>NERDCommenterToggle
