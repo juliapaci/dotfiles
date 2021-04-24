@@ -110,7 +110,7 @@ nnoremap <silent> <c-j> <c-d>
 nnoremap <silent> <C-t> :tabnew<CR> 
 nnoremap <silent> <C-w> :quit<CR>
 " select all
-map <C-a> <esc><esc>ggVG<CR>
+nmap <c-a> <esc><esc>ggVG<CR>
 " auto save
 map <C-s> :w<CR>
 " move lines around 
@@ -127,7 +127,7 @@ map <A-h> :tabp<CR>
 "file tree
 map <A-r> :NERDTreeToggle<CR>
 " comment toggle
-vmap f <plug>NERDCommenterToggle
-nmap f <plug>NERDCommenterToggle
+vmap ff <plug>NERDCommenterToggle
+nmap ff <plug>NERDCommenterToggle
 " help for my .vimrc (workign progress)
 " <leader>ww
