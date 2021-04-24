@@ -2,26 +2,37 @@ let mapleader=" "
 " vim-plug
 
 call plug#begin('~/.vim/vim-plug')
+" smart vim (auto completion, auto formatter, multiple cursors)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'terryma/vim-multiple-cursors'
+" fuzzy finder & file tree
 Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'preservim/nerdtree'
+" live server/edit
+Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
+" syntax
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'rakr/vim-one'
-Plug 'gruvbox-community/gruvbox'
-Plug 'jiangmiao/auto-pairs'
-Plug 'mileszs/ack.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/fzf.vim'
-Plug 'dense-analysis/ale'
-Plug 'tpope/vim-surround'
-Plug 'altercation/vim-colors-solarized'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'preservim/nerdcommenter'
+" themes + things for look nice points :)
 Plug 'itchyny/lightline.vim'
-Plug 'preservim/nerdtree'
+Plug 'ap/vim-css-color'
+Plug 'gruvbox-community/gruvbox'
+Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
+Plug 'altercation/vim-colors-solarized'
+" auto pairs
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+" auto commenter
+Plug 'preservim/nerdcommenter'
+" git
+Plug 'tpope/vim-fugitive'
+" help
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " scripts
@@ -92,20 +103,31 @@ set noshowmode
 set listchars=trail:-
 
 " maps
+" move fast up and down
 nnoremap <silent> <c-k> <c-u>
-nnoremap <silent> <c-j> <c-d>  
+nnoremap <silent> <c-j> <c-d>
+" create tab and quit hotkeys
 nnoremap <silent> <C-t> :tabnew<CR> 
 nnoremap <silent> <C-w> :quit<CR>
-map <C-insert> <C-i>
+" select all
 map <C-a> <esc><esc>ggVG<CR>
+" auto save
 map <C-s> :w<CR>
+" move lines around 
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
+" copy and paste
+map ,, "+y
+"move around tabs
 map <A-l> :tabn<CR>
 map <A-h> :tabp<CR>
+"file tree
 map <A-r> :NERDTreeToggle<CR>
+" comment toggle
 vmap f <plug>NERDCommenterToggle
 nmap f <plug>NERDCommenterToggle
+" help for my .vimrc (workign progress)
+" <leader>ww
