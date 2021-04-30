@@ -109,3 +109,4 @@ ZQ 	Same as :q! Quits Vim without writing changes
 :clo[se] 	Close the current pane
 
 %%yoinked from https://www.maketecheasier.com/cheatsheet/vim-keyboard-shortcuts/
+if you need anymore help check out (https://www.youtube.com/watch?v=d8XtNXutVto&t=2853s)
