@@ -1,3 +1,16 @@
+" SWITCHED TO NVIM SEE INIT.VIM!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+
+
+
+
+
 let mapleader=" "
 " vim-plug
 
