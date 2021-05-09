@@ -1,5 +1,0 @@
-# My .vimrc help
-[[vimrc.md]]
-
-# Default vim things cuz i dumb
-[[default.md]]
