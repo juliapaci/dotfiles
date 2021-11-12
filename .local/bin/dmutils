@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# useful features made easy to access
+# uses xdotool,p, & xclip
+
+utilities="mouse location
+p window
+clear clipboard (remove xclip)"
+
+dmutil=$(echo "$utilities" | dmenu -p "Utilities:" -l 3)
+prefix=""
+cmd=""
+dmenu2=""
+if [ "$dmutil" == "mouse location" ]; then
+  pre=xdotool
+  cmd=getmouselocation
+elif [ "$dmutil" == "p window" ]; then
+  prefix=pgrep
+  cmd="dmenu2"
+elif [ "$dmutil" == "clear clipboard (remove xclip)" ]; then
+  cmd=""
+fi
+
+if [ "$cmd" == "dmenu2" ]; then
+  dmenu2=$(printf "" | dmenu -p "Window:")
+  cmd=$dmenu2
+fi
+
+cmd=$($prefix $cmd)
+printf "$cmd" | xclip -selection clipboard
+notify-send "$dmutil $dmenu2 copied to clipboard
+($cmd)"

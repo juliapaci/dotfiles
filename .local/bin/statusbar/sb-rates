@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Opens crypto rates (rates.xs)
+
+case $BLOCK_BUTTON in
+	1) setsid -f "$TERMINAL" -e sh "$HOME/.local/bin/children/rates.sh" ;;
+	2) setsid -f "$TERMINAL" -e sh "$HOME/.local/bin/children/rates.sh" ;;
+	3) notify-send "Rates module" "\- Click/middle click to execute rates.sh." ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+printf "🪙"

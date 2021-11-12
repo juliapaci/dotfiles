@@ -1,0 +1,15 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+  1) notify-send " Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)\n$(free --mebi | sed -n '2{p;q}' | awk '{printf (" %2.2f / %2.2f\n", ( $3 / 1024), ($2 / 1024))}')" ;;
+	2) setsid -f "$TERMINAL" -e htop ;;
+  3) notify-send " Memory module" "\- Shows mememory overall usage (%).
+- Click to show memory hogs and memory used/total.
+- Middle click to open htop." ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+free -t | awk 'FNR == 2 {printf " " $3/$2*100 "%"}'
+
+#default
+#free --mebi | sed -n '2{p;q}' | awk '{printf ("🐏 %2.2f / %2.2f\n", ( $3 / 1024), ($2 / 1024))}'
