@@ -10,11 +10,11 @@ opt=" Record mic
    Record feedback
    Audio (both/all)"
 
-  dir="~/Documents/video/" #
+  dir="~/Documents/video/out.mkv" #
 
   #file="out.mkv"
 
-  fr="30"
+  fr="28"
 
   cont=" Stop"
 
@@ -24,12 +24,12 @@ opt=" Record mic
   #fsel=$(echo "$fr" | dmenu -p "Frame Rate:" -l 1) # -l 0)
 
   if [ "$osel" == " Record feedback" ]; then
-    ffmpeg -y -f x11grab -s 1920x1080 -i :0.0 -f alsa -ac 2 -i pulse -acodec aac "$dir" # -r $fr & "$file" with dir   #setsid -f "$TERMINAL" -e sh ~/scripts/recaud.sh
+    ffmpeg -y -f x11grab -s 1920x1080 -i :0.0 -f alsa -ac 2 -i pulse -acodec aac $dir -framerate $fr # & "$file" with dir   #setsid -f "$TERMINAL" -e sh ~/scripts/recaud.sh
   elif [ "$osel" == " Record mic" ]; then
-    ffmpeg -y -f x11grab -s 1920x1080 -i :0.0 -f alsa -i hw:2 "$dir" #-r $fr & "$file" with dir
+    ffmpeg -y -f x11grab -s 1920x1080 -i :0.0 -f alsa -i hw:2 $dir -framerate $fr # & "$file" with dir
   else
-    sh ~/.local/bin/children/recvid.sh &  PIDIOS=$!
-    sh ~/.local/bin/children/recaud.sh &  PIDMIX=$!
+    ffmpeg -y -f x11grab -s 1920x1080 -i :0.0 -f alsa -i hw:2 $dir -framerate $fr & PIDIOS=$!
+    ffmpeg -y -f x11grab -s 1920x1080 -i :0.0 -f alsa -ac 2 -i pulse -acodec aac $dir -framerate $fr & PIDMIX=$!
     wait $PIDIOS
     wait $PIDMIX
   fi

@@ -10,7 +10,6 @@ endif
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 Plug 'junegunn/goyo.vim'
 Plug 'jreybert/vimagit'
-Plug 'lukesmithxyz/vimling'
 "Plug 'tpope/vim-commentary'
 " smart vim
 Plug 'rhysd/vim-clang-format'
@@ -223,9 +222,11 @@ set listchars=trail:-
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
+  let lineNumb = line('.')
 	autocmd BufWritePre * %s/\s\+$//e
 	autocmd BufWritePre * %s/\n\+\%$//e
 	autocmd BufWritePre *.[ch] %s/\%$/\r/e
+  cal cursor(lineNumb,0)
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
 	autocmd BufWritePost bm-files,bm-dirs !shortcuts
@@ -235,7 +236,9 @@ set listchars=trail:-
 " Recompile dwmblocks on config edit.
 	autocmd BufWritePost ~/.local/src/dwmblocks/config.h !cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid -f dwmblocks }
 " run xbindkeys --poll-rc (updates xbindkeys rc) on nvim save.
-  autocmd BufWritePost .xbindkeysrc !cd ~; xbindkeys --poll-rc
+  autocmd BufWritePost ~/.xbindkeysrc !cd ~; xbindkeys --poll-rc
+" set a new pid for dunst to reload it
+  "autocmd BufWritePost ~/.config/dunst/dunstrc !dunst &
 " Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
 if &diff
     highlight! link DiffText MatchParen

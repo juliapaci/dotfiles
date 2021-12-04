@@ -17,27 +17,27 @@
 /* white	7	15 */
 
 /* anime-cats */
-*.color0: #181B35
-*.color1: #BC485C
-*.color2: #AF94AB
-*.color3: #F7D0A8
-*.color4: #aaaddd
-!#B5AADD
-!#9f5e63
-*.color5: #CCB4D0
-*.color6: #a5dcb3
-*.color7: #e9e2e4
-*.color8: #616378
-*.color9: #C17694
-*.color10: #E7A395
-*.color11: #F7D0A8
-*.color12: #AF94AB
-*.color13: #F6D8BC
-*.color14: #EFC2A1
-!#e9e2e4
-*.color15: #C17694
-*.color256: #AF94AB
-*.color257: #E7A395
+!*.color0: #181B35
+!*.color1: #BC485C
+!*.color2: #AF94AB
+!*.color3: #F7D0A8
+!*.color4: #aaaddd
+!!#B5AADD
+!!#9f5e63
+!*.color5: #CCB4D0
+!*.color6: #a5dcb3
+!*.color7: #e9e2e4
+!*.color8: #616378
+!*.color9: #C17694
+!*.color10: #E7A395
+!*.color11: #F7D0A8
+!*.color12: #AF94AB
+!*.color13: #F6D8BC
+!*.color14: #EFC2A1
+!!#e9e2e4
+!*.color15: #C17694
+!*.color256: #AF94AB
+!*.color257: #E7A395
 
 /* nord custom */
 /* *.color0: #3B4252 */
