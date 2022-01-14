@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Wine Internet Explorer
+MimeType=image/gif;
+Exec=env WINEPREFIX="/home/fabian/.local/share/wineprefixes/default" wine start /ProgIDOpen giffile %f
+NoDisplay=true
+StartupNotify=true
+Icon=6EC8_iexplore.0

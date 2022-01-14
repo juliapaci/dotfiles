@@ -1,16 +1,17 @@
 #!/bin/sh
 
 case $BLOCK_BUTTON in
-  1) notify-send " CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)\n$(sensors | awk '/Core 0/ {print "" $3}')\\n(100% per core)" ;;
-	2) setsid -f "$TERMINAL" -e htop ;;
+  1) notify-send " CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)\n$(sensors | awk '/Core 0/ {print "" $3}') (100% per core)\n curr mode: $(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor)\n curr max freq: $(cat cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq)" ;;
+  2) setsid -f "$TERMINAL" -e htop ;;
   3) notify-send " CPU module " "\- Show overall  CPU usage (%) and tempreture (left click).
-- Click to show intensive processes and CPU tempreture.
-- Middle click to open htop." ;;
-	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+    - Click to show intensive processes and CPU tempreture.
+    - Middle click to open htop." ;;
+  6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-awk '{u=$2+$4; t=$2+$4+$5; if (nr==1){u1=u; t1=t;} else print " "($2+$4-u1) * 100 / (t-t1) "%"; }' \
+
+awk '{u=$2+$4; t=$2+$4+$5; if (NR==1){u1=u; t1=t;} else print " " ($2+$4-u1) * 100 / (t-t1) "%"; }' \
 <(grep 'cpu ' /proc/stat) <(sleep 1;grep 'cpu ' /proc/stat)
 
-#default larbs
+##default larbs:
 #sensors | awk '/Core 0/ {print "🌡" $3}'

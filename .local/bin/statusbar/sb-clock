@@ -1,6 +1,7 @@
 #!/bin/sh
 
 icon=" " ;
+cale=" " ;
 
 case $BLOCK_BUTTON in
 	1) notify-send "This Month" "$(cal --color=always | sed "s/..7m/<b><span color=\"red\">/;s/..27m/<\/span><\/b>/")" && notify-send "Appointments" "$(calcurse -d3)" ;;
@@ -9,5 +10,4 @@ case $BLOCK_BUTTON in
 - Middle click opens calcurse if installed" ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
-
-date "+%b %d (%a) $icon%I:%M%p"
+echo "$cale$(date "+%b %d (%a) $icon%I:%M%p")"

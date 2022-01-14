@@ -1,4 +1,6 @@
-echo "Enter the coin/crypto you want to look at (input nothing for overall, ':help' for help, and '@' for time specifications ie 'btc@4w')"
+echo "Type ':help' for help"
+while true
+do
 read
-curl rate.sx/$REPLY
-read
+curl aud.rate.sx/$REPLY
+done

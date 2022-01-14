@@ -6,7 +6,7 @@ ex="${XDG_DATA_HOME:-$HOME/.local/bin/statusbar}/sbconfmod"
 
 case $BLOCK_BUTTON in
   1) notify-send "  Extra info" "FS: $(df -h /dev/nvme0n1p2 | awk 'FNR == 2 {print $1}') SZ: $(df -h /dev/nvme0n1p2 | awk 'FNR == 2 {print $2}') US: $(df -h /dev/nvme0n1p2 | awk 'FNR == 2 {print $3}') AV: $(df -h /dev/nvme0n1p2 | awk 'FNR == 2 {print $4}') U%: $(df -h /dev/nvme0n1p2 | awk 'FNR == 2 {print $5}') MO: $(df -h /dev/nvme0n1p2 | awk 'FNR == 2 {print $6}')\nconfigure percent etc" ;;
-	2) setsid -f "$TERMINAL" -e "$HOME/.local/bin/statusbar/sbconfmod" ;;
+	2) setsid -f "$TERMINAL" -e "sbconfmod" ;;
 	3) notify-send "  Config Module" "\- Configure status bar module options. (middle click)
 - Shows extra information (left click)" ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;

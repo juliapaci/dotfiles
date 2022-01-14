@@ -42,7 +42,7 @@ Plug 'jiangmiao/auto-pairs'
 " auto commenter
 Plug 'preservim/nerdcommenter'
  "git
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
  "help
 Plug 'vimwiki/vimwiki'
 call plug#end()
@@ -221,12 +221,14 @@ set listchars=trail:-
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
 	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 
-" Automatically deletes all trailing whitespace and newlines at end of file on save.
-  let lineNumb = line('.')
+" Automatically deletes all trailing whitespace and newlines at end of file on save. & reset cursor position
+  "autocmd BufWritePre * let lineNumb = line('.')
+  autocmd BufWritePre * let currPos = getpos(".")
 	autocmd BufWritePre * %s/\s\+$//e
 	autocmd BufWritePre * %s/\n\+\%$//e
 	autocmd BufWritePre *.[ch] %s/\%$/\r/e
-  cal cursor(lineNumb,0)
+  autocmd BufWritePre * cal cursor(currPos[1], currPos[2])
+  "autocmd BufWritePre * cal cursor(lineNumb,0)
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
 	autocmd BufWritePost bm-files,bm-dirs !shortcuts
