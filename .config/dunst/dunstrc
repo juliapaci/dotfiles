@@ -3,6 +3,7 @@
     follow = keyboard
     #geometry = "350x5-0+24" # default geo (old)
     #width = 350 # has paddding :(
+    corner_radius = 7
     width = (0, 400)
     height = 350
     offset = 12x24 # offset[1] = 0 by defualt luke    indicate_hidden = yes
@@ -44,7 +45,7 @@
     # Markup is allowed
     format = "<b>%s</b>\n%b"
 
-    alignment = left
+    alignment = center
     show_age_threshold = 60
     word_wrap = yes
     ellipsize = middle
