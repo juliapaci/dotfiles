@@ -8,44 +8,49 @@ if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autolo
 endif
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
-Plug 'junegunn/goyo.vim'
-Plug 'jreybert/vimagit'
-"Plug 'tpope/vim-commentary'
+    Plug 'junegunn/goyo.vim'
+    Plug 'jreybert/vimagit'
+    "Plug 'tpope/vim-commentary'
 " smart vim
-Plug 'rhysd/vim-clang-format'
-"Plug 'codota/tabnine-vim'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'dense-analysis/ale'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'terryma/vim-multiple-cursors'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'rhysd/vim-clang-format'
+    "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'dense-analysis/ale'
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+    Plug 'terryma/vim-multiple-cursors'
+    Plug 'alvan/vim-closetag'
+    Plug 'windwp/nvim-autopairs'
+    Plug 'preservim/nerdcommenter'
 " fuzzy finder & file tree
-Plug 'kien/ctrlp.vim'
-Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdtree'
+    "Plug 'kien/ctrlp.vim'
+    "Plug 'junegunn/fzf.vim'
+    "Plug 'preservim/nerdtree'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-lua/plenary.nvim' " telescope dependancy
 " live server/edit
-Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
+    Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
 " syntax
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+    Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'pangloss/vim-javascript'
+    Plug 'mxw/vim-jsx'
 " themes + things for look nice points :)
-Plug 'octol/vim-cpp-enhanced-highlight'
-"Plug 'https://github.com/bfrg/vim-cpp-modern'
-Plug 'itchyny/lightline.vim'
-Plug 'ap/vim-css-color'
-Plug 'gruvbox-community/gruvbox'
-Plug 'arcticicestudio/nord-vim'
+    Plug 'octol/vim-cpp-enhanced-highlight'
+    "Plug 'https://github.com/bfrg/vim-cpp-modern'
+    Plug 'itchyny/lightline.vim'
+    Plug 'ap/vim-css-color'
+    Plug 'gruvbox-community/gruvbox'
+    Plug 'arcticicestudio/nord-vim'
 " auto
-Plug 'alvan/vim-closetag'
-Plug 'jiangmiao/auto-pairs'
-"Plug 'tpope/vim-surround'
-" auto commenter
-Plug 'preservim/nerdcommenter'
+    "Plug 'jiangmiao/auto-pairs'
+    "Plug 'tpope/vim-surround'
  "git
-"Plug 'tpope/vim-fugitive'
+    "Plug 'tpope/vim-fugitive'
  "help
-Plug 'vimwiki/vimwiki'
+    Plug 'vimwiki/vimwiki'
 call plug#end()
+
  "Disable function highlighting (affects both C and C++ files)
 "let g:cpp_function_highlight = 0
 
@@ -112,9 +117,9 @@ set number relativenumber
 set incsearch
 set clipboard=unnamedplus
 "def = 4 like = 2 :) / 3 :|
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 set autoindent
 set fileformat=unix
@@ -186,8 +191,8 @@ set listchars=trail:-
 	map <leader>b :vsp<space>$BIB<CR>
 	map <leader>r :vsp<space>$REFER<CR>
 
-" Replace all is aliased to S.
-	nnoremap S :%s//g<Left><Left>
+" Replace (all) (in line) is aliased to S.
+	nnoremap S :s//g<Left><Left>
 
 " Compile document, be it groff/LaTeX/markdown/etc.
 	"map <leader>c :w! \| !compiler "<c-r>%"<CR>
@@ -196,7 +201,7 @@ set listchars=trail:-
   "autocmd filetype cpp nnoremap <leader>cp :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
   "autocmd filetype cpp nnoremap <leader>cp :w <bar> exec 'term g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
   nmap <leader>cp <esc>:term g++ -O2 -Wall *.cpp -o output && ./output<CR> :norm i<CR>
-  map <leader>cf <esc>:ClangFormat<CR>
+  vmap <leader>cf <esc>:'<,'>ClangFormat<CR>
 
   " Open corresponding .pdf/.html or preview
 	map <leader>p :!opout <c-r>%<CR><CR>
@@ -206,8 +211,8 @@ set listchars=trail:-
 
 " Ensure files are read as what I want:
 	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-	map <leader>v :VimwikiIndex
-	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+	map <leader>v :VimwikiIndex<CR>
+	let g:vimwiki_list = [{'path': '.config/nvim/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
@@ -268,5 +273,7 @@ nnoremap <c-a> <esc><esc>ggVG<CR>
 vmap ff <plug>NERDCommenterToggle
 nmap ff <plug>NERDCommenterToggle
 map <C-s> :w<CR>
-nnoremap j gj
-nnoremap k gk
+noremap j gj
+noremap k gk
+    " Telescope
+nnoremap eff <cmd>Telescope find_files<cr>

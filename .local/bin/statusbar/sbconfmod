@@ -1,3 +1,58 @@
 #!/bin/sh
-echo "Type \"help\" for help"
-read
+
+
+# TODO: add add command
+# TODO: add remove command
+# TODO: add toggle command, disable, enable
+# TODO: add maybe edit command
+
+function help() {
+
+    printf "\n\nhelp\n\nusage:\n\n<command> <options> <targets>\n\ncommands:\n\n     \"toggle\" - Toggles (comments) the specified block\n     \"remove\" - Removes (deletes) specified block\n     \"add\"    - Adds new block\n     \"save\"   - Writes (makes) changes\n     \"list\"   - lists enabled and disabled blocks (modules) \n\n"
+
+}
+
+
+function start() {
+
+    read inp;
+
+    if [ $inp = "help" ]; then
+        help;
+    elif [ $inp = "list" ]; then
+
+        printf "\n"
+
+        # disabled
+        printf "\033[1mdisabled:\n\n\033[0m"
+        echo  $(cat ~/s | sed -ne "/\"/p" | sed -ne "s/{.*sb/sb/gp"  | sed -ne "s/\",.*//gp" | sed -ne "s/\/\///gp" | sed -e "s/\s/\n/g")
+
+        printf "\n"
+
+        # enabled
+        printf "\033[1menabled:\n\n\033[0m"
+        echo $(cat ~/s | sed -e "/\//d" | sed -ne "/sb/p" | sed -e "s/{.*,\s*\"//g" | sed -e "s/\".*//g" | sed -e "s/\s//g")
+
+
+        printf "\n"
+
+    elif [ $inp = "save" ]; then
+
+        cd ~/.local/src/dwmblocks/; sudo make install && { killall -q dwmblocks;setsid dwmblocks & }; cd ~
+
+    elif [ $inp = "toggle" ]
+
+    else
+        echo "unknown command, try \"help\" for help";
+    fi
+
+}
+
+
+
+
+echo "Type \"help\" for help";
+
+while true; do
+    start
+done

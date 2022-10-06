@@ -4,6 +4,7 @@
 # to charge status (  for plugged up,   for discharging on battery, etc.).
 
 case $BLOCK_BUTTON in
+  1) notify-send "xbacklight: $(xbacklight)" ;;
 	3) notify-send "  Battery module" " : discharging
  : not charging
  : stagnant charge
@@ -30,7 +31,7 @@ for battery in /sys/class/power_supply/BAT?*; do
 	esac
 	capacity=$(cat "$battery/capacity")
 	# Will make a warn variable if discharging and low
-	[ "$status" = " " ] &&[ "$capacity" -le 25 ] && status=" "
+	[ "$status" = " " ] && [ "$capacity" -le 25 ] && status=" "
 	[ "$status" = " " ] && [ "$capacity" -le 25 ] && warn=" "
   [ "$status" = " " ] && [ "$capacity" -le 25 ] && notify-send " Battery Running Low "
 	# Prints the info

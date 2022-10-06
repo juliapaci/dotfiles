@@ -5,6 +5,10 @@ cp -r ~/.config/fontconfig ~/gitvc/dotfiles/.config/ && cp -r ~/.config/gtk* ~/g
 cp -r ~/.local/bin ~/gitvc/dotfiles/.local
 cp -r ~/.local/share/applications ~/gitvc/dotfiles/.local/share
 cp -r ~/.local/share/larbs ~/gitvc/dotfiles/.local/share
+#cp -r ~/.local/src ~/gitvc/dotfiles/.local/
+#rm ~/gitvc/dotfiles/.local/src/st/st
+#rm ~/gitvc/dotfiles/.local/src/dwm/dwm
+#rm ~/gitvc/dotfiles/.local/src/
 cp ~/.config/nvim/coc-settings.json ~/.config/nvim/init.vim ~/gitvc/dotfiles/.config/nvim
 rm ~/gitvc/dotfiles/.config/zsh/.zcompdump ~/gitvc/dotfiles/.config/lf/shortcutrc ~/gitvc/dotfiles/.config/ncmpcpp/error.log ~/gitvc/dotfiles/.config/mpv/scripts/mpvSockets/.git
 rm -rf ~/gitvc/dotfiles/.config/wal/colorschemes
