@@ -5,6 +5,6 @@ you should only use these to understand more about something. you shouldn't just
 
 # usage
 Most of these files are intended to go with my +
-- [dwm](https://github.com/FabianPaci/dwm) (window manager)
-- [dwmblocks](https://github.com/FabianPaci/dwmblocks) (status bar)
-- [st](https://github.com/FabianPaci/st) (terminal emulator)
+- [dwm](https://github.com/aymey/dwm) (window manager)
+- [dwmblocks](https://github.com/aymey/dwmblocks) (status bar)
+- [st](https://github.com/aymey/st) (terminal emulator)
