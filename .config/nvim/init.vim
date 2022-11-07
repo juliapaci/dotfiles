@@ -105,6 +105,9 @@ set noruler
 set laststatus=0
 set noshowcmd
 
+" disable mouse context menu (right click)
+set mousemodel=extend
+
 " Some basics:
 
 "set background=dark
@@ -278,5 +281,4 @@ noremap k gk
 " Commentary stuff
 vmap ff :Commentary<CR>
 nmap ff :Commentary<CR>
-
 autocmd FileType c setlocal commentstring=//\ %s
