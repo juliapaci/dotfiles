@@ -10,7 +10,6 @@ endif
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
     Plug 'junegunn/goyo.vim'
     Plug 'jreybert/vimagit'
-    "Plug 'tpope/vim-commentary'
 " smart vim
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
@@ -21,13 +20,15 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
     Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
     Plug 'terryma/vim-multiple-cursors'
     Plug 'alvan/vim-closetag'
-    Plug 'windwp/nvim-autopairs'
-    Plug 'preservim/nerdcommenter'
+    Plug 'windwp/nvim-autopairs'                 " autopairs
+    Plug 'Jorengarenar/miniSnip'                 " snippets
+    Plug 'tpope/vim-commentary'                  " comments
+    "Plug 'preservim/nerdcommenter'
 " fuzzy finder & file tree
     "Plug 'kien/ctrlp.vim'
     "Plug 'junegunn/fzf.vim'
     "Plug 'preservim/nerdtree'
-    Plug 'nvim-telescope/telescope.nvim'
+    " Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-lua/plenary.nvim' " telescope dependancy
 " live server/edit
     Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
@@ -270,10 +271,12 @@ function! ToggleHiddenAll()
 endfunction
 nnoremap <leader>h :call ToggleHiddenAll()<CR>
 nnoremap <c-a> <esc><esc>ggVG<CR>
-vmap ff <plug>NERDCommenterToggle
-nmap ff <plug>NERDCommenterToggle
 map <C-s> :w<CR>
 noremap j gj
 noremap k gk
-    " Telescope
-nnoremap eff <cmd>Telescope find_files<cr>
+
+" Commentary stuff
+vmap ff :Commentary<CR>
+nmap ff :Commentary<CR>
+
+autocmd FileType c setlocal commentstring=//\ %s
