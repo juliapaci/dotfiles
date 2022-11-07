@@ -7,4 +7,5 @@ you should only use these to understand more about something. you shouldn't just
 Most of these files are intended to go with my +
 - [dwm](https://github.com/aymey/dwm) (window manager)
 - [dwmblocks](https://github.com/aymey/dwmblocks) (status bar)
+- [dmenu](https://github.com/aymey/dmenu) (menu)
 - [st](https://github.com/aymey/st) (terminal emulator)
