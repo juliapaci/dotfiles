@@ -1,15 +1,11 @@
 #!/bin/sh
 
-border=$(cat ~/.border)
-
 case $BLOCK_BUTTON in
     1) notify-send " Memory hogs" "$(ps axch -o cmd:15,%mem --sort=-%mem | head)\n$(free --mebi | sed -n '2{p;q}' | awk '{printf (" %2.2f / %2.2f\n", ( $3 / 1024), ($2 / 1024))}')" ;;
 	2) setsid -f "$TERMINAL" -e htop ;;
     3) notify-send " Memory module" "\- Shows mememory overall usage (%).
 - Click to show memory hogs and memory used/total.
 - Middle click to open htop." ;;
-    4) [ $border != 7 ] && let border++; [ $border = 3 ] && let border++; echo $border > ~/.border ;;
-    5) [ $border != 2 ] && let border--; [ $border = 3 ] && let border--; echo $border > ~/.border ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
