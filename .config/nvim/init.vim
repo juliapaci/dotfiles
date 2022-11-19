@@ -134,7 +134,10 @@ set splitbelow splitright
 set hidden
 set nohlsearch
 "set nowrap
+set wrap
+set breakindent
 set noerrorbells
+let &showbreak=' '
 set smartindent
 set smartcase
 set ignorecase
