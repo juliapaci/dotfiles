@@ -2,7 +2,7 @@
 
 # setbg Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-PS1="%n@%M %~ $ "
+PS1="%{$fg[blue]%}%n@%M %{$fg[cyan]%}%~ %{$reset_color%}% $ "
 setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
