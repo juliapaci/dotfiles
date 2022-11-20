@@ -1,7 +1,7 @@
 !most custom palletes are generated via wallpapaer ~/Documents/wallpapers
 
 !! Transparency (0-1):
-*.alpha: 0.8
+*.alpha: 0.85
 
 !! Set a default font and font size as below:
 *.font: monospace:size=10
@@ -40,22 +40,22 @@
 !*.color257: #E7A395
 
 /* nord custom */
-/* *.color0: #3B4252 */
-/* *.color1: #BF616A */
-/* *.color2: #A3BE8C */
-/* *.color3: #EBCB8B */
-/* *.color4: #81A1C1 */
-/* *.color5: #B48EAD */
-/* *.color6: #88C0D0 */
-/* *.color7: #E5E9F0 */
-/* *.color8: #4C566A */
-/* *.color9: #db7982 */
-/* *.color10: #bdd6a7 */
-/* *.color11: #ffe0a1 */
-/* *.color12: #a1c2e3 */
-/* *.color13: #d9b4d2 */
-/* *.color14: #b8e6e4 */
-/* *.color15: #ECEFF4 */
+*.color0: #323744
+*.color1: #BF616A
+*.color2: #A3BE8C
+*.color3: #EBCB8B
+*.color4: #81A1C1
+*.color5: #B48EAD
+*.color6: #88C0D0
+*.color7: #E5E9F0
+*.color8: #8d8d8e
+*.color9: #db7982
+*.color10: #bdd6a7
+*.color11: #ffe0a1
+*.color12: #a1c2e3
+*.color13: #d9b4d2
+*.color14: #b8e6e4
+*.color15: #ECEFF4
 
 /* !! gruvbox: */
 /* *.color0: #1d2021 */
