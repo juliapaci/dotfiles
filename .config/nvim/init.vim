@@ -118,6 +118,8 @@ let g:move_key_modifier = 'A'
 set hlsearch
 set laststatus=2
 set number relativenumber
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE
+set cursorline
 set incsearch
 set clipboard=unnamedplus
 "def = 4 like = 2 :) / 3 :|
