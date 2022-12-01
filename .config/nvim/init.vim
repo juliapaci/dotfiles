@@ -145,7 +145,7 @@ set smartcase
 set ignorecase
 set scrolloff=8
 set signcolumn=yes
-set colorcolumn=80
+" set colorcolumn=80
 set cmdheight=2
 set noshowmode
 set listchars=trail:-
