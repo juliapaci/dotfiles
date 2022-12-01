@@ -95,7 +95,7 @@ autocmd BufWritePre *.ts execute "silent %!npx prettier --stdin-filepath '" . ex
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 "let g:clang_format#auto_format=1
 set title
-set bg=light
+" set bg=light
 set go=a
 set mouse=a
 set nohlsearch
@@ -110,9 +110,9 @@ set mousemodel=extend
 
 " Some basics:
 
-"set background=dark
+" set background=dark
 colorscheme nord
-"colorscheme gruvbox
+" colorscheme gruvbox
 let g:move_key_modifier = 'A'
 "hi Normal guibg=NONE ctermbg=NONE
 set hlsearch
@@ -170,7 +170,6 @@ set listchars=trail:-
 
 " Nerd tree
     map <A-r> :NERDTreeToggle<CR>
-    "map <leader>r :NERDTreeToggle<CR>
     "if has('nvim')
         "let NERDTreeBookmarksFile = stdpath('data') . '/NERDTreeBookmarks'
     "else
@@ -228,12 +227,6 @@ set listchars=trail:-
 
 " Save file as sudo on files that require root permission
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-
-" Enable Goyo by default for mutt writing
-	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
-	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
-	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
-	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save. & reset cursor position
   "autocmd BufWritePre * let lineNumb = line('.')
