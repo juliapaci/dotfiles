@@ -4,7 +4,7 @@
 *.alpha: 0.85
 
 !! Set a default font and font size as below:
-*.font: monospace:size=10.5
+*.font: monospace:size=10
 
 // was once rose pine
 
