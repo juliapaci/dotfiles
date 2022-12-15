@@ -39,7 +39,6 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 " themes + things for look nice points :)
     Plug 'octol/vim-cpp-enhanced-highlight'
     "Plug 'https://github.com/bfrg/vim-cpp-modern'
-    Plug 'itchyny/lightline.vim'
     Plug 'ap/vim-css-color'
     Plug 'gruvbox-community/gruvbox'
     Plug 'arcticicestudio/nord-vim'
@@ -80,10 +79,13 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ ]
 
-"lightline config
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }"set bg=dark
+" status bar config
+set termguicolors
+set statusline=                                        "Reset
+
+set statusline+=\ %t\                                  "Tail
+set statusline+=\ %m\                                  "Modified
+set statusline+=\ %=%y\                                "FileType
 
 "clang formatter config
 let g:clang_format#style_options = {
@@ -118,8 +120,6 @@ let g:move_key_modifier = 'A'
 set hlsearch
 set laststatus=2
 set number relativenumber
-highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE
-set cursorline
 set incsearch
 set clipboard=unnamedplus
 "def = 4 like = 2 :) / 3 :|
