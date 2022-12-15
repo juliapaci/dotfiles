@@ -81,11 +81,14 @@ let g:coc_global_extensions = [
 
 " status bar config
 " set termguicolors
+
+set laststatus=2
 set statusline=                                        "Reset
 
 set statusline+=\ %t\                                  "Tail
 set statusline+=\ %m\                                  "Modified
 set statusline+=\ %=%y\                                "FileType
+
 
 "clang formatter config
 let g:clang_format#style_options = {
@@ -105,7 +108,6 @@ set nohlsearch
 set clipboard+=unnamedplus
 set noshowmode
 set noruler
-set laststatus=0
 set noshowcmd
 
 " disable mouse context menu (right click)
@@ -118,7 +120,6 @@ colorscheme nord
 let g:move_key_modifier = 'A'
 "hi Normal guibg=NONE ctermbg=NONE
 set hlsearch
-set laststatus=2
 set number relativenumber
 set incsearch
 set clipboard=unnamedplus
@@ -282,3 +283,6 @@ noremap k gk
 vmap ff :Commentary<CR>
 nmap ff :Commentary<CR>
 autocmd FileType c setlocal commentstring=//\ %s
+
+" why is it here? seems to not work unless its here????
+hi statusline ctermfg=darkblue ctermbg=0
