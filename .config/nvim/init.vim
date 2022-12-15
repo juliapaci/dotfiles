@@ -80,7 +80,7 @@ let g:coc_global_extensions = [
   \ ]
 
 " status bar config
-set termguicolors
+" set termguicolors
 set statusline=                                        "Reset
 
 set statusline+=\ %t\                                  "Tail
@@ -98,6 +98,7 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 "let g:clang_format#auto_format=1
 set title
 " set bg=light
+" set bg=dark
 set go=a
 set mouse=a
 set nohlsearch
@@ -114,7 +115,6 @@ set mousemodel=extend
 
 " set background=dark
 colorscheme nord
-" colorscheme gruvbox
 let g:move_key_modifier = 'A'
 "hi Normal guibg=NONE ctermbg=NONE
 set hlsearch
