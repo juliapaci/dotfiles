@@ -134,7 +134,9 @@ set encoding=utf-8
 set wildmode=longest,list,full
 set splitbelow splitright
 set hidden
-set nohlsearch
+" set highlight all found words and map enter key to clear highlight
+set hlsearch
+nnoremap <CR> :noh<CR>
 "set nowrap
 set wrap
 set breakindent
