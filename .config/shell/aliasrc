@@ -35,6 +35,7 @@ alias \
 	e="$EDITOR" \
 	v="$EDITOR" \
     findall="sudo find / -iname" \
+    catall="find . -type f -exec cat {} + | grep"
     xclipb="xclip -selection clipboard"
 
 alias \
