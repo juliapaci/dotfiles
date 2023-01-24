@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=rundll32
-MimeType=application/x-ms-application;
-Exec=env WINEPREFIX="/home/fabian/.local/share/wineprefixes/default" wine start /ProgIDOpen Application.Manifest %f
-NoDisplay=true
-StartupNotify=true
-Icon=5742_rundll32.0

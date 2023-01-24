@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Wine Internet Explorer
-MimeType=image/png;
-Exec=env WINEPREFIX="/home/fabian/.local/share/wineprefixes/default" wine start /ProgIDOpen pngfile %f
-NoDisplay=true
-StartupNotify=true
-Icon=6EC8_iexplore.0
