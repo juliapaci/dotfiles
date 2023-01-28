@@ -283,6 +283,7 @@ noremap k gk
 vmap ff :Commentary<CR>
 nmap ff :Commentary<CR>
 autocmd FileType c setlocal commentstring=//\ %s
+autocmd FileType cpp setlocal commentstring=//\ %s
 
 " why is it here? seems to not work unless its here????
 hi statusline ctermfg=darkblue ctermbg=0
