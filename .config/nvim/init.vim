@@ -8,7 +8,6 @@ if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autolo
 endif
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
-    Plug 'junegunn/goyo.vim'
     Plug 'jreybert/vimagit'
 " smart vim
     Plug 'hrsh7th/cmp-nvim-lsp'
@@ -23,52 +22,18 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
     Plug 'windwp/nvim-autopairs'                 " autopairs
     Plug 'Jorengarenar/miniSnip'                 " snippets
     Plug 'tpope/vim-commentary'                  " comments
-    "Plug 'preservim/nerdcommenter'
-" fuzzy finder & file tree
-    "Plug 'kien/ctrlp.vim'
-    "Plug 'junegunn/fzf.vim'
-    "Plug 'preservim/nerdtree'
-    " Plug 'nvim-telescope/telescope.nvim'
-    Plug 'nvim-lua/plenary.nvim' " telescope dependancy
-" live server/edit
-    Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' }
-" syntax
-    Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'pangloss/vim-javascript'
-    Plug 'mxw/vim-jsx'
-" themes + things for look nice points :)
+    "Plug 'kien/ctrlp.vim'                      " fuzzy finder
+    "Plug 'junegunn/fzf.vim'                    " fuzzy finder
+    "Plug 'preservim/nerdtree'                  " file browser
+    Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' } " realtime live server
     Plug 'octol/vim-cpp-enhanced-highlight'
     "Plug 'https://github.com/bfrg/vim-cpp-modern'
-    Plug 'ap/vim-css-color'
-    Plug 'gruvbox-community/gruvbox'
-    Plug 'arcticicestudio/nord-vim'
-" auto
-    "Plug 'jiangmiao/auto-pairs'
+    Plug 'ap/vim-css-color'                     " hex colours show
+    Plug 'gruvbox-community/gruvbox'            "gruvbox theme
+    Plug 'arcticicestudio/nord-vim'             " nord theme
     "Plug 'tpope/vim-surround'
- "git
-    "Plug 'tpope/vim-fugitive'
- "help
-    Plug 'vimwiki/vimwiki'
+    "Plug 'tpope/vim-fugitive'                  " git
 call plug#end()
-
- "Disable function highlighting (affects both C and C++ files)
-"let g:cpp_function_highlight = 0
-
- "Enable highlighting of C++11 attributes
-"let g:cpp_attributes_highlight = 1
-
- "Highlight struct/class member variables (affects both C and C++ files)
-"let g:cpp_member_highlight = 1
-
- "Put all standard C and C++ keywords under Vim's highlight group 'Statement'
- "(affects both C and C++ files)
-"let g:cpp_simple_highlight = 1
-"let g:cpp_class_scope_highlight=1
-"let g:cpp_member_variable_highlight = 1
-"let g:cpp_class_decl_highlight = 1
-"let g:cpp_posix_standard = 1
-"let g:cpp_experimental_simple_template_highlight = 1
-"let g:cpp_experimental_template_highlight = 1
 
  "coc config
 let g:coc_global_extensions = [
@@ -110,8 +75,6 @@ set noshowmode
 set noruler
 set noshowcmd
 
-" disable mouse context menu (right click)
-set mousemodel=extend
 
 " Some basics:
 
@@ -123,6 +86,8 @@ set hlsearch
 set number relativenumber
 set incsearch
 set clipboard=unnamedplus
+" disable mouse context menu (right click)
+set mousemodel=extend
 "def = 4 like = 2 :) / 3 :|
 set tabstop=4
 set softtabstop=4
@@ -158,17 +123,13 @@ set listchars=trail:-
 	syntax enable
 	set encoding=utf-8
 	set number relativenumber
-" Enable autocompletion:
-	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Perform dot commands over visual blocks:
 	vnoremap . :normal .<CR>
-" Goyo plugin makes text more readable when writing prose:
-	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
-" Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
+" Splits open at the bottom and right, unlike vim defaults.
 	set splitbelow splitright
 
 " Nerd tree
@@ -179,13 +140,6 @@ set listchars=trail:-
         "let NERDTreeBookmarksFile = '~/.vim' . '/NERDTreeBookmarks'
     "endif
 
-" vimling:
-	nm <leader><leader>d :call ToggleDeadKeys()<CR>
-	imap <leader><leader>d <esc>:call ToggleDeadKeys()<CR>a
-	nm <leader><leader>i :call ToggleIPA()<CR>
-	imap <leader><leader>i <esc>:call ToggleIPA()<CR>a
-	nm <leader><leader>q :call ToggleProse()<CR>
-
 " Shortcutting split navigation, saving a keypress:
 	map <C-h> <C-w>h
 	map <C-j> <C-w>j
@@ -193,14 +147,10 @@ set listchars=trail:-
 	map <C-l> <C-w>l
 
 " Replace ex mode with gq
-	map Q gq
+    map Q gq
 
 " Check file in shellcheck:
 	map <leader>s :!clear && shellcheck -x %<CR>
-
-" Open my bibliography file in split
-	map <leader>b :vsp<space>$BIB<CR>
-	map <leader>r :vsp<space>$REFER<CR>
 
 " Replace (all) (in line) is aliased to S.
 	nnoremap S :s//g<Left><Left>
@@ -210,8 +160,6 @@ set listchars=trail:-
 	"map <leader>c :w! \| !compiler "<c-r>%"<CR>
 
   "compile cpp and run
-  "autocmd filetype cpp nnoremap <leader>cp :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
-  "autocmd filetype cpp nnoremap <leader>cp :w <bar> exec 'term g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
   nmap <leader>cp <esc>:term g++ -O2 -Wall *.cpp -o output && ./output<CR> :norm i<CR>
   vmap <leader>cf <esc>:'<,'>ClangFormat<CR>
 
@@ -223,9 +171,6 @@ set listchars=trail:-
 
 " Ensure files are read as what I want:
 	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-	map <leader>v :VimwikiIndex<CR>
-	let g:vimwiki_list = [{'path': '.config/nvim/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
 
@@ -285,5 +230,4 @@ nmap ff :Commentary<CR>
 autocmd FileType c setlocal commentstring=//\ %s
 autocmd FileType cpp setlocal commentstring=//\ %s
 
-" why is it here? seems to not work unless its here????
 hi statusline ctermfg=darkblue ctermbg=0
