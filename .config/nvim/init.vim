@@ -8,8 +8,8 @@ if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autolo
 endif
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
-    Plug 'jreybert/vimagit'
-    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'mbbill/undotree'                      " undo tree
+    Plug 'hrsh7th/cmp-nvim-lsp'                 " lsp
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'rhysd/vim-clang-format'
@@ -29,8 +29,10 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
     Plug 'ap/vim-css-color'                     " hex colours show
     Plug 'gruvbox-community/gruvbox'            "gruvbox theme
     Plug 'arcticicestudio/nord-vim'             " nord theme
+    Plug 'AlexvZyl/nordic.nvim'                 " nordic theme
     "Plug 'tpope/vim-surround'
     "Plug 'tpope/vim-fugitive'                  " git
+    " Plug 'jreybert/vimagit'                   " git
 call plug#end()
 
 "coc config
@@ -130,8 +132,12 @@ map <leader>o :setlocal spell! spelllang=en_us<CR>
 " Splits open at the bottom and right, unlike vim defaults.
 set splitbelow splitright
 
+" Undo tree
+nnoremap <A-r> :UndotreeToggle<CR>
+let g:undotree_SetFocusWhenToggle = 1
+
 " Nerd tree
-map <A-r> :NERDTreeToggle<CR>
+" map <A-r> :NERDTreeToggle<CR>
 "if has('nvim')
 "let NERDTreeBookmarksFile = stdpath('data') . '/NERDTreeBookmarks'
 "else
