@@ -1,7 +1,7 @@
 # Dotfiles
 My personal dotfiles
 
-# Usage
+## Usage
 Some of these files are integrated and intended to go with with my workflow
 - [dwm](https://github.com/aymey/dwm) (window manager)
 - [dwmblocks](https://github.com/aymey/dwmblocks) (status bar)
