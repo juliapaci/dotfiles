@@ -150,6 +150,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Goto file on new vertical window
+nnoremap gf <C-w>v gf
+
 " Replace ex mode with gq
 map Q gq
 
