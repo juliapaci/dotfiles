@@ -228,6 +228,9 @@ map <C-s> :w<CR>
 noremap j gj
 noremap k gk
 
+"
+nmap da :ALEDetail<CR>
+
 " Commentary stuff
 vmap ff :Commentary<CR>
 nmap ff :Commentary<CR>
