@@ -1,7 +1,7 @@
 !most custom palletes are generated via wallpapaer ~/Documents/wallpapers
 
 !! Transparency (0-1):
-*.alpha: 0.85
+*.alpha: 1
 
 !! Set a default font and font size as below:
 *.font: monospace:size=10
