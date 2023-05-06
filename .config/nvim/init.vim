@@ -81,6 +81,7 @@ set noshowcmd
 " set background=dark
 colorscheme nord
 let g:move_key_modifier = 'A'
+hi Visual term=reverse cterm=reverse
 "hi Normal guibg=NONE ctermbg=NONE
 set hlsearch
 set number relativenumber
