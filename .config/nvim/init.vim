@@ -165,7 +165,8 @@ vnoremap S :s//g<Left><Left>
 "map <leader>c :w! \| !compiler "<c-r>%"<CR>
 
 "compile cpp and run
-nmap <leader>cp <esc>:term g++ -O2 -Wall *.cpp -o output && ./output<CR> :norm i<CR>
+nmap <leader>cpp <esc>:term g++ -O2 -Wall *.cpp -o output && ./output<CR> :norm i<CR>
+nmap <leader>cp <esc>:term gcc -O2 -Wall *.c -o output && ./output<CR> :norm i<CR>
 vmap <leader>cf <esc>:'<,'>ClangFormat<CR>
 
 " Open corresponding .pdf/.html or preview
