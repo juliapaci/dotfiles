@@ -90,9 +90,9 @@ set clipboard=unnamedplus
 " disable mouse context menu (right click)
 set mousemodel=extend
 "def = 4 like = 2 :) / 3 :|
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set autoindent
 set fileformat=unix
