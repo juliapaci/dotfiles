@@ -4,9 +4,7 @@
 *.alpha: 1
 
 !! Set a default font and font size as below:
-*.font: monospace:size=10
-
-// was once rose pine
+*.font: monospace:size=10.5
 
 /* name		dark	light */
 /* black	0	8 */
@@ -17,6 +15,82 @@
 /* purple	5	13 */
 /* cyan		6	14 */
 /* white	7	15 */
+
+/* rose-pine */
+/* ! special */
+/* *.foreground:   #ffffff */
+/* *.background:   #1c1e26 */
+/* *.cursorColor:  #ffffff */
+
+/* ! black */
+/* *.color0:       #2a2c33 */
+/* *.color8:       #464952 */
+
+/* ! red */
+/* *.color1:       #ff6363 */
+/* *.color9:       #ff8d8d */
+
+/* ! green */
+/* *.color2:       #b2f870 */
+/* *.color10:      #ccff9a */
+
+/* ! yellow */
+/* *.color3:       #ffd476 */
+/* *.color11:      #ffe999 */
+
+/* ! blue */
+/* *.color4:       #80aeff */
+/* *.color12:      #a6c3ff */
+
+/* ! magenta */
+/* *.color5:       #d58bff */
+/* *.color13:      #e2acff */
+
+/* ! cyan */
+/* *.color6:       #7aebff */
+/* *.color14:      #a6faff */
+
+/* ! white */
+/* *.color7:       #d0d2d8 */
+/* *.color15:      #f0f2f8 */
+
+/* */
+/* ! special */
+/* *.foreground:   #d0d2d8 */
+/* *.background:   #2c2f3e */
+/* *.cursorColor:  #d0d2d8 */
+
+/* ! black */
+/* *.color0:       #404455 */
+/* *.color8:       #585e71 */
+
+/* ! red */
+/* *.color1:       #ff8a8a */
+/* *.color9:       #ffc4c4 */
+
+/* ! green */
+/* *.color2:       #c2ff8a */
+/* *.color10:      #e2ffb5 */
+
+/* ! yellow */
+/* *.color3:       #ffe7a8 */
+/* *.color11:      #fff2c4 */
+
+/* ! blue */
+/* *.color4:       #8abeff */
+/* *.color12:      #b5d8ff */
+
+/* ! magenta */
+/* *.color5:       #d8b5ff */
+/* *.color13:      #ecd8ff */
+
+/* ! cyan */
+/* *.color6:       #8affff */
+/* *.color14:      #b5ffff */
+
+/* ! white */
+/* *.color7:       #e0e2e8 */
+/* *.color15:      #f0f2f8 */
 
 /* anime-cats */
 !*.color0: #181B35
