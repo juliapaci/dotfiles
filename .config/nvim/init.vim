@@ -15,7 +15,6 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
     Plug 'rhysd/vim-clang-format'
     "Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'dense-analysis/ale'
-    Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
     Plug 'terryma/vim-multiple-cursors'
     Plug 'alvan/vim-closetag'
     Plug 'windwp/nvim-autopairs'                 " autopairs
@@ -24,12 +23,9 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
     "Plug 'kien/ctrlp.vim'                      " fuzzy finder
     "Plug 'junegunn/fzf.vim'                    " fuzzy finder
     "Plug 'preservim/nerdtree'                  " file browser
-    Plug 'turbio/bracey.vim', { 'do': 'npm install --prefix server' } " realtime live server
     Plug 'octol/vim-cpp-enhanced-highlight'
     Plug 'ap/vim-css-color'                     " hex colours show
-    Plug 'gruvbox-community/gruvbox'            "gruvbox theme
-    Plug 'arcticicestudio/nord-vim'             " nord theme
-    Plug 'AlexvZyl/nordic.nvim'                 " nordic theme
+    Plug 'https://github.com/conweller/muted.vim'
     "Plug 'tpope/vim-surround'
     "Plug 'tpope/vim-fugitive'                  " git
     " Plug 'jreybert/vimagit'                   " git
@@ -77,12 +73,13 @@ set noshowcmd
 
 
 " Some basics:
-
-" set background=dark
-colorscheme nord
+" set t_Co=16
+" set t_ut=1
+set background=dark
+" colorscheme desert
 let g:move_key_modifier = 'A'
 hi Visual term=reverse cterm=reverse
-"hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 set hlsearch
 set number relativenumber
 set incsearch
@@ -239,4 +236,5 @@ nmap ff :Commentary<CR>
 autocmd FileType c setlocal commentstring=//\ %s
 autocmd FileType cpp setlocal commentstring=//\ %s
 
-hi statusline ctermfg=darkblue ctermbg=0
+hi statusline ctermfg=darkblue ctermbg=NONE
+colorscheme muted

@@ -6,6 +6,26 @@
 !! Set a default font and font size as below:
 *.font: monospace:size=10.5
 
+/* muted from vim, converted into xresources style */
+*background:    #303030
+*foreground:    #FFFFD3
+*color0:        #303030
+*color8:        #8a8a8a
+*color1:        #FA615C
+*color9:        #FF8787
+*color2:        #B3D847
+*color10:       #afd787
+*color3:        #D7AFAF
+*color11:       #AEAEFF
+*color4:        #D6B000
+*color12:       #FFD75F
+*color5:        #FCB04F
+*color13:       #FCB081
+*color6:        #87AFAF
+*color14:       #87AFD7
+*color7:        #FFFFFF
+*color15:       #121212
+
 /* name		dark	light */
 /* black	0	8 */
 /* red		1	9 */
@@ -15,6 +35,56 @@
 /* purple	5	13 */
 /* cyan		6	14 */
 /* white	7	15 */
+
+/* gruber darker */
+/* ! primary */
+/* *.foreground: #e4e4ef */
+/* *.background: #16161D */
+
+/* ! cursor */
+/* *.cursorColor: #ffdd33 */
+/* *.color10: #181818 */
+
+/* ! normal */
+/* *.color0: #16161D */
+/* *.color7: #b1bac4 */
+/* *.color1: #c73c3f */
+/* *.color2: #73c936 */
+/* *.color3: #cc8c3c */
+/* *.color4: #96a6c8 */
+/* *.color5: #9e95c7 */
+/* *.color6: #95a99f */
+
+/* ! bright */
+/* *.color8: #484848 */
+/* *.color4: #79c0ff */
+/* *.color5: #b3f0ff */
+/* *.color10: #56d364 */
+/* *.color13: #d2a8ff */
+/* *.color1: #f43841 */
+/* *.color15: #c9d1d9 */
+/* *.color11: #e3b341 */
+
+
+/* test */
+/* *foreground: #e4e4ef */
+/* *background: #181818 */
+/* *color0:  #2E3436 */
+/* *color1:  #a40000 */
+/* *color2:  #4E9A06 */
+/* *color3:  #C4A000 */
+/* *color4:  #3465A4 */
+/* *color5:  #75507B */
+/* *color6:  #ce5c00 */
+/* *color7:  #babdb9 */
+/* *color8:  #555753 */
+/* *color9:  #EF2929 */
+/* *color10: #8AE234 */
+/* *color11: #FCE94F */
+/* *color12: #729FCF */
+/* *color13: #AD7FA8 */
+/* *color14: #fcaf3e */
+/* *color15: #EEEEEC */
 
 /* rose-pine */
 /* ! special */
@@ -54,7 +124,7 @@
 /* *.color7:       #d0d2d8 */
 /* *.color15:      #f0f2f8 */
 
-/* */
+
 /* ! special */
 /* *.foreground:   #d0d2d8 */
 /* *.background:   #2c2f3e */
