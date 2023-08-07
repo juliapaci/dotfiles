@@ -13,6 +13,7 @@ vim.opt.signcolumn = "yes"              -- always display multiple columns for s
 vim.opt.cmdheight = 2                   -- 2 line cmd
 vim.cmd.filetype("plugin on")           -- enable filetype plugins
 vim.opt.showmode = false                -- disable line number visibility in visual mode
+vim.opt.guicursor = ""                  -- set block cursor always
 
 -- tab --
 vim.opt.tabstop = 4

@@ -8,19 +8,7 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-autopairs'                     -- auto pairs
     use {
         'numToStr/Comment.nvim',                    -- comments
-        config = function()
-        require('Comment').setup()--{
-            -- ignore = '^$',
-            -- toggler = {
-            --     line = 'ff',
-            --     block = 'ff',
-            -- },
-            -- opleader = {
-            --     line = 'ff',
-            --     block = 'ff',
-            -- },
-        -- })
-        end
+        require('Comment').setup()
     }
     use 'norcalli/nvim-colorizer.lua'               -- colourizer
     use 'https://github.com/conweller/muted.vim'    -- muted color scheme
