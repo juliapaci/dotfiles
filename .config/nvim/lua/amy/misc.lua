@@ -1,18 +1,8 @@
 vim.opt.mouse = ""                      -- disable mouse
-vim.opt.hlsearch = true                 -- highlight all search matches
-vim.opt.incsearch = true                -- highlight while searching
-vim.opt.number = true                   -- line numbers
-vim.opt.relativenumber = true           -- relative line numbers
 vim.opt.title = true                    -- window title as file names and/or paths
 vim.opt.clipboard:append "unnamedplus"  -- always use the clipboard
-vim.opt.showmode = false                -- dont show mode on last line
-vim.opt.background = "dark"             -- set background to dark
-vim.opt.smartcase = true                -- only match cases when cases are used
 vim.opt.scrolloff = 8                   -- 8 screen line space buffer
-vim.opt.signcolumn = "yes"              -- always display multiple columns for signs
-vim.opt.cmdheight = 2                   -- 2 line cmd
 vim.cmd.filetype("plugin on")           -- enable filetype plugins
-vim.opt.showmode = false                -- disable line number visibility in visual mode
 
 -- tab --
 vim.opt.tabstop = 4
@@ -39,4 +29,28 @@ vim.api.nvim_create_autocmd("BufEnter", { callback = function() vim.opt.formatop
 vim.opt.guicursor = "v:block"           -- for some reason i have to add this line instead???????
 -- vim.opt.guicursor = ""                  -- set block cursor always
 
+-- search --
+vim.opt.hlsearch = true                 -- highlight all search matches
+vim.opt.incsearch = true                -- highlight while searching
+vim.opt.ignorecase = true
+vim.opt.smartcase = true                -- only match cases when cases are used
+
+-- ui --
+vim.opt.number = true                   -- line numbers
+vim.opt.relativenumber = true           -- relative line numbers
+vim.opt.showmode = false                -- disable line number visibility in visual mode
+vim.opt.signcolumn = "yes"              -- always display multiple columns for signs
+vim.opt.cmdheight = 2                   -- 2 line cmd
+vim.opt.showmode = false                -- dont show mode on last line
+
+vim.opt.background = "dark"             -- set background to dark
 vim.cmd.colorscheme("muted")            -- color scheme
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, { -- remove trailing whitespace
+    callback = function(ev)
+        save_cursor = vim.fn.getpos(".")         -- todo maybe use winsaveview()?
+        vim.cmd([[%s/\s\+$//e]])
+        vim.cmd([[%s/\n\+\%$//e]])
+        vim.fn.setpos(".", save_cursor)
+    end,
+})
