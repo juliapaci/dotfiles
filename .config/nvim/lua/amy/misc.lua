@@ -13,7 +13,6 @@ vim.opt.signcolumn = "yes"              -- always display multiple columns for s
 vim.opt.cmdheight = 2                   -- 2 line cmd
 vim.cmd.filetype("plugin on")           -- enable filetype plugins
 vim.opt.showmode = false                -- disable line number visibility in visual mode
-vim.opt.guicursor = ""                  -- set block cursor always
 
 -- tab --
 vim.opt.tabstop = 4
@@ -35,5 +34,9 @@ vim.opt.smartindent = true              -- auto indent when appropriate
 
 -- comment stuff --
 vim.api.nvim_create_autocmd("BufEnter", { callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "c","r","o" } end, }) -- remove comment on newline
+
+-- cursor --
+vim.opt.guicursor = "v:block"           -- for some reason i have to add this line instead???????
+-- vim.opt.guicursor = ""                  -- set block cursor always
 
 vim.cmd.colorscheme("muted")            -- color scheme
