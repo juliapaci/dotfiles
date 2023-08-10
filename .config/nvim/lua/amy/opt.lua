@@ -1,9 +1,3 @@
-vim.opt.mouse = ""                      -- disable mouse
-vim.opt.title = true                    -- window title as file names and/or paths
-vim.opt.clipboard:append "unnamedplus"  -- always use the clipboard
-vim.opt.scrolloff = 8                   -- 8 screen line space buffer
-vim.cmd.filetype("plugin on")           -- enable filetype plugins
-
 -- tab --
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -22,13 +16,6 @@ vim.opt.breakindent = true              -- indent wrapped lines
 vim.opt.autoindent = true               -- copies indentation of prev line when appropriate
 vim.opt.smartindent = true              -- auto indent when appropriate
 
--- comment stuff --
-vim.api.nvim_create_autocmd("BufEnter", { callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "c","r","o" } end, }) -- remove comment on newline
-
--- cursor --
-vim.opt.guicursor = "v:block"           -- for some reason i have to add this line instead???????
--- vim.opt.guicursor = ""                  -- set block cursor always
-
 -- search --
 vim.opt.hlsearch = true                 -- highlight all search matches
 vim.opt.incsearch = true                -- highlight while searching
@@ -42,12 +29,21 @@ vim.opt.showmode = false                -- disable line number visibility in vis
 vim.opt.signcolumn = "yes"              -- always display multiple columns for signs
 vim.opt.cmdheight = 2                   -- 2 line cmd
 vim.opt.showmode = false                -- dont show mode on last line
-
 vim.opt.background = "dark"             -- set background to dark
 vim.cmd.colorscheme("muted")            -- color scheme
 
+-- misc --
+vim.opt.mouse = ""                      -- disable mouse
+vim.opt.title = true                    -- window title as file names and/or paths
+vim.opt.clipboard:append "unnamedplus"  -- always use the clipboard
+vim.opt.scrolloff = 8                   -- 8 screen line space buffer
+vim.cmd.filetype("plugin on")           -- enable filetype plugins
+
+-- auto commands --
+vim.api.nvim_create_autocmd("VimEnter", { callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "c","r","o" } end, }) -- remove comment on newline
+vim.api.nvim_create_autocmd("VimEnter", { callback = function () vim.cmd.highlight("clear SignColumn") end, })                          -- clear gutter colours
 vim.api.nvim_create_autocmd({ "BufWritePre" }, { -- remove trailing whitespace
-    callback = function(ev)
+    callback = function()
         save_cursor = vim.fn.getpos(".")         -- TODO: maybe use winsaveview()?
         vim.cmd([[%s/\s\+$//e]])
         vim.cmd([[%s/\n\+\%$//e]])
