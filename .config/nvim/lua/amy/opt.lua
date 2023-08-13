@@ -31,6 +31,7 @@ vim.opt.cmdheight = 2                   -- 2 line cmd
 vim.opt.showmode = false                -- dont show mode on last line
 vim.opt.background = "dark"             -- set background to dark
 vim.cmd.colorscheme("muted")            -- color scheme
+vim.g.ale_virtualtext_cursor = false    -- dont display analysis as comments
 
 -- misc --
 vim.opt.mouse = ""                      -- disable mouse

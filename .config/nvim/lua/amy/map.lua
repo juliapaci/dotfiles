@@ -21,4 +21,3 @@ vim.keymap.set('n', 'ff', function()
     and '<Plug>(comment_toggle_linewise_current)'
     or '<Plug>(comment_toggle_linewise_count)'
 end, { expr = true })                                                       -- toggle comments
-vim.keymap.set("n", "da", function() vim.cmd("ALEDetail") end)              -- see error from lsp
