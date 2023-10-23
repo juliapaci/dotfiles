@@ -21,6 +21,7 @@ vim.opt.hlsearch = true                 -- highlight all search matches
 vim.opt.incsearch = true                -- highlight while searching
 vim.opt.ignorecase = true
 vim.opt.smartcase = true                -- only match cases when cases are used
+vim.opt.iskeyword=vim.opt.iskeyword-"_" -- underscores work like spaces when jumping words
 
 -- ui --
 vim.opt.number = true                   -- line numbers

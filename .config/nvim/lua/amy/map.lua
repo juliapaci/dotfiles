@@ -1,7 +1,7 @@
 vim.g.mapleader = ","
 
-vim.keymap.set("n", "j", "gj")                  -- move down when lines wrap
-vim.keymap.set("n", "k", "gk")                  -- move up when lines wrap
+vim.keymap.set("", "j", "gj")                   -- move down when lines wrap
+vim.keymap.set("", "k", "gk")                   -- move up when lines wrap
 vim.keymap.set("n", "<CR>", "<cmd>noh<CR>")     -- remove highlighting
 vim.keymap.set("", "S", ":s//g<left><left>")    -- replace inline
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")      -- write to file
