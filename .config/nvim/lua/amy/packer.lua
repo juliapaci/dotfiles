@@ -3,7 +3,6 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'                    -- packer
     use 'mbbill/undotree'                           -- undo tree
-    use 'windwp/nvim-autopairs'                     -- auto pairs
     -- use {
     --     'numToStr/Comment.nvim',                    -- comments
     --     require('Comment').setup()
@@ -14,6 +13,10 @@ return require('packer').startup(function(use)
     use {
         'numToStr/Comment.nvim',                    -- comments
         require('Comment').setup()
+    }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
     }
 
     use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
