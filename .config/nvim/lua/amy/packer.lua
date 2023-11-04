@@ -19,8 +19,6 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
 
-    use 'seblj/nvim-echo-diagnostics'
-
     use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use {                                           -- lsp
         'VonHeikemen/lsp-zero.nvim',
