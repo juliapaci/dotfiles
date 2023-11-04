@@ -32,7 +32,6 @@ vim.opt.cmdheight = 2                   -- 2 line cmd
 vim.opt.showmode = false                -- dont show mode on last line
 vim.opt.background = "dark"             -- set background to dark
 vim.cmd.colorscheme("muted")            -- color scheme
-vim.g.ale_virtualtext_cursor = false    -- dont display analysis as comments
 
 -- misc --
 vim.opt.mouse = ""                      -- disable mouse
@@ -46,7 +45,7 @@ vim.api.nvim_create_autocmd("VimEnter", { callback = function() vim.opt.formatop
 vim.api.nvim_create_autocmd("VimEnter", { callback = function () vim.cmd.highlight("clear SignColumn") end, })                          -- clear gutter colours
 vim.api.nvim_create_autocmd({ "BufWritePre" }, { -- remove trailing whitespace
     callback = function()
-        save_cursor = vim.fn.getpos(".")         -- TODO: maybe use winsaveview()?
+        save_cursor = vim.fn.getpos(".")         -- TODO: maybe use winsaveview()? or markers
         vim.cmd([[%s/\s\+$//e]])
         vim.cmd([[%s/\n\+\%$//e]])
         vim.fn.setpos(".", save_cursor)
