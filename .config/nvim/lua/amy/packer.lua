@@ -3,13 +3,9 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'                    -- packer
     use 'mbbill/undotree'                           -- undo tree
-    -- use {
-    --     'numToStr/Comment.nvim',                    -- comments
-    --     require('Comment').setup()
-    -- }
     use 'norcalli/nvim-colorizer.lua'               -- colourizer
     use 'https://github.com/conweller/muted.vim'    -- color scheme
-
+    use 'seblj/nvim-echo-diagnostics'
     use {
         'numToStr/Comment.nvim',                    -- comments
         require('Comment').setup()
@@ -32,6 +28,7 @@ return require('packer').startup(function(use)
             -- Autocompletion
             {'hrsh7th/nvim-cmp'},
             {'hrsh7th/cmp-nvim-lsp'},
+            {'L3MON4D3/LuaSnip'},
         }
     }
 end)
