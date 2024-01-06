@@ -20,10 +20,14 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])-- deleting to void register
 vim.keymap.set("i", "<C-c>", "<Esc>")           -- to save multiline edit when <C-c> instead of <Esc>
 
 -- split navigation --
-vim.keymap.set("", "<C-h>", "<C-w>h")           -- up
+vim.keymap.set("", "<C-h>", "<C-w>h")           -- left
 vim.keymap.set("", "<C-j>", "<C-w>j")           -- down
 vim.keymap.set("", "<C-k>", "<C-w>k")           -- up
 vim.keymap.set("", "<C-l>", "<C-w>l")           -- right
+vim.keymap.set("", "<C-A-H>", "<C-w><")           -- dec width
+vim.keymap.set("", "<C-A-J>", "<C-w>-")           -- dec height
+vim.keymap.set("", "<C-A-K>", "<C-w>+")           -- inc height
+vim.keymap.set("", "<C-A-L>", "<C-w>>")           -- inc width
 
 -- plugin related --
 vim.keymap.set("n", "<A-r>", function() vim.cmd("UndotreeToggle") end)      -- toggle undo tree ui
