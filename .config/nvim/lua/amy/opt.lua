@@ -15,6 +15,8 @@ vim.opt.breakindent = true              -- indent wrapped lines
 -- indentation --
 vim.opt.autoindent = true               -- copies indentation of prev line when appropriate
 vim.opt.smartindent = true              -- auto indent when appropriate
+-- vim.opt.list = true                     -- disable with nolist
+-- vim.opt.lcs:append "space:."            -- show whitespace as .
 
 -- search --
 vim.opt.hlsearch = true                 -- highlight all search matches
