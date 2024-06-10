@@ -1,4 +1,4 @@
-require("amy.statusline")
-require("amy.packer")
-require("amy.map")
-require("amy.opt")
+require("julia.packer")
+require("julia.statusline")
+require("julia.opt")
+require("julia.map")

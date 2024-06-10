@@ -6,9 +6,11 @@ return require('packer').startup(function(use)
     use 'norcalli/nvim-colorizer.lua'               -- colourizer
     use 'https://github.com/conweller/muted.vim'    -- color scheme
     use 'seblj/nvim-echo-diagnostics'
-    use {
-        'numToStr/Comment.nvim',                    -- comments
-        require('Comment').setup()
+    use {                                           -- comments
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
     }
     use {
         'windwp/nvim-autopairs',
