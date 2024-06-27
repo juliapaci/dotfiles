@@ -5,7 +5,6 @@ return require('packer').startup(function(use)
     use 'mbbill/undotree'                           -- undo tree
     use 'norcalli/nvim-colorizer.lua'               -- colourizer
     use 'https://github.com/conweller/muted.vim'    -- color scheme
-    use 'seblj/nvim-echo-diagnostics'
     use {                                           -- comments
         'numToStr/Comment.nvim',
         config = function()
@@ -16,7 +15,7 @@ return require('packer').startup(function(use)
         'windwp/nvim-autopairs',
         config = function() require("nvim-autopairs").setup {} end
     }
-
+    use 'seblj/nvim-echo-diagnostics'
     use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use {                                           -- lsp
         'VonHeikemen/lsp-zero.nvim',

@@ -20,3 +20,14 @@ lsp.set_sign_icons({
   hint = 'H',
   info = 'I'
 })
+
+-- echo diagnostics
+local diag = require("echo-diagnostics")
+
+diag.setup{
+    show_diagnostic_number = false,
+    show_diagnostic_source = false,
+}
+
+vim.opt.updatetime = 300
+vim.api.nvim_create_autocmd("CursorHold", { callback = function() diag.echo_line_diagnostic() end })
