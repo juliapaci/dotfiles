@@ -12,7 +12,9 @@ require('mason-lspconfig').setup({
   }
 })
 
-vim.diagnostic.config({virtual_text = false})
+vim.diagnostic.config({
+    virtual_text = false, underline = false
+})
 
 lsp.set_sign_icons({
   error = 'E',

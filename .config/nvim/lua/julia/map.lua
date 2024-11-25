@@ -11,8 +11,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")    -- move code blocks and indent
 vim.keymap.set("n", "J", "mzJ`z")               -- keep cursor in place when J
 vim.keymap.set("n", "<C-d>", "<C-d>zz")         -- keep cursor in the middle when half page jumping
 vim.keymap.set("n", "<C-u>", "<C-u>zz")         -- keep cursor in the middle when half page jumping
-vim.keymap.set("n", "N", "Nzzzv")               -- keep cursor in the middle when searching
-vim.keymap.set("n", "n", "nzzzv")               -- keep cursor in the middle when searching
 vim.keymap.set("x", "<leader>p", [["_dP]])      -- preserve copy register when pasting over
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])-- copy to system clipboard
 vim.keymap.set("n", "<leader>Y", [["+Y]])       -- copy to system clipboard
@@ -24,10 +22,10 @@ vim.keymap.set("", "<C-h>", "<C-w>h")           -- left
 vim.keymap.set("", "<C-j>", "<C-w>j")           -- down
 vim.keymap.set("", "<C-k>", "<C-w>k")           -- up
 vim.keymap.set("", "<C-l>", "<C-w>l")           -- right
-vim.keymap.set("", "<C-A-H>", "<C-w><")           -- dec width
-vim.keymap.set("", "<C-A-J>", "<C-w>-")           -- dec height
-vim.keymap.set("", "<C-A-K>", "<C-w>+")           -- inc height
-vim.keymap.set("", "<C-A-L>", "<C-w>>")           -- inc width
+vim.keymap.set("", "<C-A-H>", "<C-w><")         -- dec width
+vim.keymap.set("", "<C-A-J>", "<C-w>-")         -- dec height
+vim.keymap.set("", "<C-A-K>", "<C-w>+")         -- inc height
+vim.keymap.set("", "<C-A-L>", "<C-w>>")         -- inc width
 
 -- plugin related --
 vim.keymap.set("n", "<A-r>", function() vim.cmd("UndotreeToggle") end)      -- toggle undo tree ui
