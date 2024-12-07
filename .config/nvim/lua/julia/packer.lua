@@ -4,7 +4,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'                    -- packer
     use 'mbbill/undotree'                           -- undo tree
     use 'norcalli/nvim-colorizer.lua'               -- colourizer
-    use 'https://github.com/conweller/muted.vim'    -- color scheme
+    use 'Alligator/accent.vim'    -- color scheme
     use {                                           -- comments
         'numToStr/Comment.nvim',
         config = function()

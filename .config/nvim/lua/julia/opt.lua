@@ -32,8 +32,16 @@ vim.opt.showmode = false                -- disable line number visibility in vis
 vim.opt.signcolumn = "yes"              -- always display multiple columns for signs
 vim.opt.cmdheight = 2                   -- 2 line cmd
 vim.opt.showmode = false                -- dont show mode on last line
-vim.opt.background = "dark"             -- set background to dark
-vim.cmd.colorscheme("muted")            -- color scheme
+
+vim.opt.background  = "dark"             -- set background to dark
+-- vim.opt.termguicolors = true
+vim.g.accent_colour = 'yellow'
+vim.g.accent_no_bg = true
+vim.g.accent_darken = true
+vim.cmd.colorscheme("accent")            -- color scheme
+vim.cmd.highlight('Type ctermfg=250')
+vim.cmd.highlight('Normal ctermfg=253')
+vim.cmd.highlight('StatusLine ctermbg=0')
 
 -- misc --
 vim.opt.mouse = ""                      -- disable mouse
