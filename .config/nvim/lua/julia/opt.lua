@@ -50,6 +50,8 @@ vim.opt.clipboard:append "unnamedplus"  -- always use the clipboard
 vim.opt.scrolloff = 8                   -- 8 screen line space buffer
 vim.cmd.filetype("plugin on")           -- enable filetype plugins
 
+vim.g.zig_fmt_autosave = false;
+
 -- auto commands --
 vim.api.nvim_create_autocmd("VimEnter", { callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "c","r","o" } end, }) -- remove comment on newline
 vim.api.nvim_create_autocmd("VimEnter", { callback = function () vim.cmd.highlight("clear SignColumn") end, })                          -- clear gutter colours
