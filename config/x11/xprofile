@@ -12,7 +12,7 @@ redshift -l -30:150 & # not real location obv
 
 autostart="mpd xcompmgr dunst pipewire wireplumber"
 
-for program in $autostart; do
+for program in $(echo $autostart); do
 	pidof -s "$program" || "$program" &
 done >/dev/null 2>&1
 

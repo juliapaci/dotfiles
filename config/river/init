@@ -168,7 +168,9 @@ riverctl default-layout rivertile
 rivertile -view-padding 0 -outer-padding 0 &
 
 # auto start apps
+wlsunset -l -30 -L 150 &
+
 autostart="dunst poweralertd"
-for program in $autostart; do
+for program in $(echo $autostart); do
 	pidof -s "$program" || "$program" &
 done >/dev/null 2>&1
