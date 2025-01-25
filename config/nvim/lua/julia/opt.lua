@@ -37,6 +37,7 @@ vim.opt.background  = "dark"             -- set background to dark
 -- vim.opt.termguicolors = true
 vim.g.accent_colour = 'yellow'
 vim.g.accent_no_bg = true
+vim.g.accent_invert_status = 1
 vim.g.accent_darken = true
 vim.cmd.colorscheme("accent")            -- color scheme
 vim.cmd.highlight('Type ctermfg=250')
