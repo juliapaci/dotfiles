@@ -51,7 +51,9 @@ vim.opt.clipboard:append "unnamedplus"  -- always use the clipboard
 vim.opt.scrolloff = 8                   -- 8 screen line space buffer
 vim.cmd.filetype("plugin on")           -- enable filetype plugins
 
-vim.g.zig_fmt_autosave = false;
+vim.g.zig_fmt_autosave = false
+
+vim.opt.guicursor = "n-v-i-c:block-Cursor"
 
 -- auto commands --
 vim.api.nvim_create_autocmd("VimEnter", { callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "c","r","o" } end, }) -- remove comment on newline
