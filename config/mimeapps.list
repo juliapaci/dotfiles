@@ -23,10 +23,6 @@ application/x-extension-shtml=firefox.desktop
 application/xhtml+xml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
-x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
-x-scheme-handler/discord-472164236332630018=discord-472164236332630018.desktop
-x-scheme-handler/discord-424004941485572097=discord-424004941485572097.desktop
-
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
