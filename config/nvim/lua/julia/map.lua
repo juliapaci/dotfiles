@@ -15,14 +15,18 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])-- deleting to void register
 vim.keymap.set("i", "<C-c>", "<Esc>")           -- to save multiline edit when <C-c> instead of <Esc>
 
 -- split navigation --
-vim.keymap.set("n", "<C-h>", "<C-w>h")           -- left
-vim.keymap.set("n", "<C-j>", "<C-w>j")           -- down
-vim.keymap.set("n", "<C-k>", "<C-w>k")           -- up
-vim.keymap.set("n", "<C-l>", "<C-w>l")           -- right
-vim.keymap.set("", "<C-A-H>", "<C-w><")         -- dec width
-vim.keymap.set("n", "<C-A-J>", "<C-w>-")         -- dec height
-vim.keymap.set("n", "<C-A-K>", "<C-w>+")         -- inc height
-vim.keymap.set("n", "<C-A-L>", "<C-w>>")         -- inc width
+vim.keymap.set("n", "<C-h>", "<C-w>h")          -- left
+vim.keymap.set("n", "<C-j>", "<C-w>j")          -- down
+vim.keymap.set("n", "<C-k>", "<C-w>k")          -- up
+vim.keymap.set("n", "<C-l>", "<C-w>l")          -- right
+vim.keymap.set("", "<C-A-h>", "<C-w><")         -- dec width
+vim.keymap.set("n", "<C-A-j>", "<C-w>-")        -- dec height
+vim.keymap.set("n", "<C-A-k>", "<C-w>+")        -- inc height
+vim.keymap.set("n", "<C-A-l>", "<C-w>>")        -- inc width
+
+-- for quickfix --
+vim.keymap.set("n", "<A-j>", "<cmd>cnext<CR>");
+vim.keymap.set("n", "<A-k>", "<cmd>cprev<CR>");
 
 -- plugin related --
 vim.keymap.set("n", "<A-r>", function() vim.cmd("UndotreeToggle") end)      -- toggle undo tree ui
