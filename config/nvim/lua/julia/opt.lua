@@ -34,15 +34,15 @@ vim.opt.cmdheight = 2                   -- 2 line cmd
 vim.opt.showmode = false                -- dont show mode on last line
 
 vim.opt.background  = "dark"             -- set background to dark
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 vim.g.accent_colour = 'yellow'
 vim.g.accent_no_bg = true
-vim.g.accent_invert_status = 1
+vim.g.accent_invert_status = false
 vim.g.accent_darken = true
 vim.cmd.colorscheme("accent")            -- color scheme
-vim.cmd.highlight('Type ctermfg=250')
-vim.cmd.highlight('Normal ctermfg=253')
-vim.cmd.highlight('StatusLine ctermbg=0')
+vim.cmd.highlight('Type ctermfg=250 guifg=#bcbcbc')
+vim.cmd.highlight('Normal ctermfg=253 guifg=#dadada')
+vim.cmd.highlight('StatusLine ctermbg=NONE guibg=NONE')
 
 -- misc --
 vim.opt.mouse = ""                      -- disable mouse
