@@ -32,4 +32,8 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},
         }
     }
+    use {
+        'lervag/vimtex',
+        init = function() vim.g.vimtex_view_method = "zathura" end
+    }
 end)
