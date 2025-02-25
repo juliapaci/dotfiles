@@ -31,6 +31,8 @@ vim.keymap.set("n", "<A-k>", "<cmd>cprev<CR>");
 -- plugin related --
 vim.keymap.set("n", "<A-r>", function() vim.cmd("UndotreeToggle") end)      -- toggle undo tree ui
 vim.keymap.set("x", "ff", "<Plug>(comment_toggle_linewise_visual)")         -- toggle comments
+vim.keymap.set("n", "<leader>mr", ":!pandoc -t pdf \"%:p\" -o \"%:t:r.pdf\"<CR>") -- vimtex sub
+vim.keymap.set("n", "<leader>tr", ":!typst compile % %:t:r.pdf<CR>") -- vimtex sub
 vim.keymap.set('n', 'ff', function()
     return vim.v.count == 0
     and '<Plug>(comment_toggle_linewise_current)'
