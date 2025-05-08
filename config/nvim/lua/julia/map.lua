@@ -14,6 +14,8 @@ vim.keymap.set("x", "<leader>p", [["_dP]])      -- preserve copy register when p
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])-- deleting to void register
 vim.keymap.set("i", "<C-c>", "<Esc>")           -- to save multiline edit when <C-c> instead of <Esc>
 
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>");    -- escape terminal mode with <Esc>
+
 -- split navigation --
 vim.keymap.set("n", "<C-h>", "<C-w>h")          -- left
 vim.keymap.set("n", "<C-j>", "<C-w>j")          -- down
