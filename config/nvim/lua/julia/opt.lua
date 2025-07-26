@@ -1,5 +1,5 @@
 -- tab --
-vim.opt.tabstop = 4
+-- vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
@@ -33,7 +33,7 @@ vim.opt.signcolumn = "yes"              -- always display multiple columns for s
 vim.opt.cmdheight = 2                   -- 2 line cmd
 vim.opt.showmode = false                -- dont show mode on last line
 
-vim.opt.background  = "dark"             -- set background to dark
+vim.opt.background  = "dark"            -- set background to dark
 vim.opt.termguicolors = true
 vim.g.accent_colour = 'yellow'
 vim.g.accent_no_bg = true
@@ -61,7 +61,7 @@ vim.g.vimtex_compiler_method    = 'latexrun'
 
 -- auto commands --
 vim.api.nvim_create_autocmd("VimEnter", { callback = function() vim.opt.formatoptions = vim.opt.formatoptions - { "c","r","o" } end, }) -- remove comment on newline
-vim.api.nvim_create_autocmd("VimEnter", { callback = function () vim.cmd.highlight("clear SignColumn") end, })                          -- clear gutter colours
+vim.api.nvim_create_autocmd("VimEnter", { callback = function() vim.cmd.highlight("clear SignColumn") end, })                          -- clear gutter colours
 vim.api.nvim_create_autocmd({ "BufWritePre" }, { -- remove trailing whitespace
     callback = function()
         save_cursor = vim.fn.getpos(".")         -- TODO: maybe use winsaveview()? or markers

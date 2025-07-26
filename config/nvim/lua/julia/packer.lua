@@ -36,4 +36,5 @@ return require('packer').startup(function(use)
         'lervag/vimtex',
         init = function() vim.g.vimtex_view_method = "zathura" end
     }
+    use 'tidalcycles/vim-tidal'
 end)
