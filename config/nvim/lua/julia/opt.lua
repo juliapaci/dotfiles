@@ -35,12 +35,20 @@ vim.opt.showmode = false                -- dont show mode on last line
 
 vim.opt.background  = "dark"            -- set background to dark
 vim.opt.termguicolors = true
-vim.g.accent_colour = 'yellow'
+-- vim.g.accent_colour = 'yellow'       -- accent is changed after `colorscheme`
 vim.g.accent_no_bg = true
 vim.g.accent_invert_status = false
 vim.g.accent_darken = true
 vim.cmd.colorscheme("accent")            -- color scheme
+-- lol manually changing stuff to be shades of grey instead of white
+-- tbh i should just make a colour scheme. i prob will :)
 vim.cmd.highlight('Type ctermfg=250 guifg=#bcbcbc')
+vim.cmd.highlight('Special ctermfg=250 guifg=#999999')
+vim.cmd.highlight('String ctermfg=250 guifg=#cccccc')
+if false then -- comfy pink accent mayb
+    vim.cmd.highlight('Special ctermfg=250 guifg=#D3869B')
+    vim.cmd.highlight('String ctermfg=250 guifg=#D3869B')
+end
 vim.cmd.highlight('Normal ctermfg=253 guifg=#dadada')
 vim.cmd.highlight('StatusLine ctermbg=NONE guibg=NONE')
 
